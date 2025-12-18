@@ -1,11 +1,10 @@
 import streamlit as st
 from fastai.vision.all import *
-from requirements.txt import *
 
 st.title("Fish Species Identification")
 st.text("Built by Joshua")
 
-fish_model = load_learner("Joshua's Notebook (9-AM) Project.pkl")
+fish_model = load_learner("fish_species_prediction_model.pkl")
 
 def extract_images(file_name):
     p = Path(file_name)
