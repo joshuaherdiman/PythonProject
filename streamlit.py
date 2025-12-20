@@ -4,8 +4,6 @@ from fastai.vision.all import *
 st.title("Fish Species Identification")
 st.text("Built by Joshua")
 
-fish_model = load_learner("fish_species_prediction_model.pkl")
-
 def extract_images(file_name):
     p = Path(file_name)
     species_name_parts = p.stem.split("_")
@@ -18,6 +16,10 @@ def extract_images(file_name):
             final_species_name += "_"
 
     return final_species_name
+
+fish_model = load_learner("fish_species_prediction_model.pkl")
+
+
 
 def predict(image):
     img = PILImage.create(image)
